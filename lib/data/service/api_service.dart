@@ -6,19 +6,25 @@ import 'package:flutter_tech_task/utils/result.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+part '../../generated/data/service/api_service.g.dart';            
+
+
 @riverpod
 ApiService apiService(Ref ref)=> ApiService();
 
 class ApiService {
 
+  final http.Client _client;
   final String _baseUrl = "https://jsonplaceholder.typicode.com";
 
-  Future<Result<dynamic>> get(String endpoint) async {
+  ApiService({http.Client? client}) : _client = client ?? http.Client();
+
+  Future<Result<dynamic>> get({required String endpoint}) async {
     try {
-      var url = Uri.https(_baseUrl,endpoint);
-      var response = await http.get(url);
+      var url = Uri.parse(_baseUrl + endpoint);
+      var response = await _client.get(url);
       if (response.statusCode != 200) {
-        return Result.error(UnKnownError());
+        return Result.error(BadRequestException());
       }
       final json = jsonDecode(response.body);
       return Result.ok(json);

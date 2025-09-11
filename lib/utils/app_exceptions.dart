@@ -1,3 +1,7 @@
+class BadRequestException implements Exception {
+  final String message;
+  BadRequestException({this.message = "Bad request"});
+}
 
 class NetworkError implements Exception {
   final String message;
