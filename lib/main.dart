@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tech_task/utils/theme.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -14,16 +15,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme =
+        createTextTheme(context, "Lato", "Lato");
+    MaterialTheme theme = MaterialTheme(textTheme);
+    
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme.light(),
+      darkTheme: theme.dark(),
       initialRoute: 'list/',
       routes: {
         "list/": (context) => ListPage(),
         "details/": (context) => DetailsPage(),
       },
+      
     );
   }
 }
