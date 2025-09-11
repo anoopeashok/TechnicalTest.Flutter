@@ -17,13 +17,21 @@ class ApiService {
   final http.Client _client;
   final String _baseUrl = "https://jsonplaceholder.typicode.com";
 
+    Map<String, String> get _headers => {
+    'Content-Type': 'application/json; charset=UTF-8',
+    'Accept': 'application/json',
+    'User-Agent': 'Flutter-App/1.0.0', // Important: Some APIs block requests without User-Agent
+    'Cache-Control': 'no-cache',
+  };
+
   ApiService({http.Client? client}) : _client = client ?? http.Client();
 
   Future<Result<dynamic>> get({required String endpoint}) async {
     try {
       var url = Uri.parse(_baseUrl + endpoint);
-      var response = await _client.get(url);
+      var response = await _client.get(url, headers: _headers);
       if (response.statusCode != 200) {
+
         return Result.error(BadRequestException());
       }
       final json = jsonDecode(response.body);
