@@ -1,0 +1,9 @@
+{
+    "defaultErrorMessage":"Something went wrong",
+    "home":"Home",
+    "comments":"Comments",
+    "viewComments":"View Comments",
+    "posts":"Posts",
+    "savedPosts":"Saved Posts",
+    "postDetails":"Post Details"
+}

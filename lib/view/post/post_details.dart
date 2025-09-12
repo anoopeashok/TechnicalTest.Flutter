@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tech_task/l10n/app_localizations.dart';
 import 'package:flutter_tech_task/utils/error_widgets.dart';
 import 'package:flutter_tech_task/view/comments/comments_view.dart';
 import 'package:flutter_tech_task/view/post/post_save.dart';
@@ -43,7 +44,7 @@ class PostDetailView extends ConsumerWidget {
                         children: [
                           TextButton(onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => CommenstsListView(postId: post.id)));
-                          }, child: const Text("View Comments")),
+                          }, child: Text(AppLocalizations.of(context)!.viewComments)),
                         ],
                       )
                     ])),
