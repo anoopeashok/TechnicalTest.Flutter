@@ -33,7 +33,7 @@ class ApiService {
       var response = await _client.get(url, headers: _headers);
       if (response.statusCode != 200) {
 
-        return Result.error(BadRequestException());
+        return Result.error(FetchDataError());
       }
       final json = jsonDecode(response.body);
       return Result.ok(json);

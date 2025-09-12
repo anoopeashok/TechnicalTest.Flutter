@@ -5,7 +5,9 @@ import 'package:flutter_tech_task/view/home/home_view.dart';
 import 'package:flutter_tech_task/view/post/post_view.dart';
 
 void main() {
-  runApp(ProviderScope(child: const MyApp()));
+  runApp(ProviderScope(
+     retry: (retryCount, error) => null,
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

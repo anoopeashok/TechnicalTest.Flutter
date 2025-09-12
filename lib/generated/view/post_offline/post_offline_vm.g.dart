@@ -45,4 +45,4 @@ final class FetchOfflinePostsProvider
   }
 }
 
-String _$fetchOfflinePostsHash() => r'8e39dead724aab1d333acd43f3df3ccc22529517';
+String _$fetchOfflinePostsHash() => r'cca352dddb89fecefd7e8e0be3930f4f400954f8';

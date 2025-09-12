@@ -38,7 +38,7 @@ void main() {
         () => mockHttpClient.get(any(), headers: any(named: 'headers')),
       ).thenAnswer((_) async => http.Response(responseBody, 400));
       var result = await apiService.get(endpoint: '/test-endpoint');
-      expect(result, Result.error(BadRequestException()));
+      expect(result, Result.error(FetchDataError()));
     },
   );
 }
