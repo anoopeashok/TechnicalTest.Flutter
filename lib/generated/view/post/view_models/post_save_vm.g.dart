@@ -50,7 +50,7 @@ final class PostSaveVMProvider
   }
 }
 
-String _$postSaveVMHash() => r'ef25ce85fe27a22d9e767c7ae2df530f354db350';
+String _$postSaveVMHash() => r'5d04d54b0e7529a1314fd916a623ae29ad8d9534';
 
 final class PostSaveVMFamily extends $Family
     with

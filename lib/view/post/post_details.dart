@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tech_task/utils/error_widgets.dart';
 import 'package:flutter_tech_task/view/comments/comments_view.dart';
 import 'package:flutter_tech_task/view/post/post_save.dart';
 import 'package:flutter_tech_task/view/post/view_models/post_detail_vm.dart';
@@ -46,7 +47,7 @@ class PostDetailView extends ConsumerWidget {
                         ],
                       )
                     ])),
-        error: (err, st) => ErrorWidget(err.toString()),
+        error: (err, st) => ErrorMessage(message: err.toString()),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );  

@@ -7,7 +7,7 @@ import '../../../utils/result.dart';
       part '../../../generated/view/post/view_models/post_vm.g.dart';
 @riverpod
 Future<List<Post>> fetchPosts(Ref ref) async{
-  final postRepository = ref.watch(postRemoteRepositoryProvider);
+  final postRepository = ref.read(postRemoteRepositoryProvider);
   final result =  await postRepository.fetchPosts();
   switch(result){
     case Ok():

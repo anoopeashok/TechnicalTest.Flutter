@@ -58,7 +58,7 @@ final class FetchPostByIdProvider
   }
 }
 
-String _$fetchPostByIdHash() => r'a78ecffd004ce75dbe18be3a2ff81f51691bbc2f';
+String _$fetchPostByIdHash() => r'5507842859ce41a44f52decdabcd54467611c3bf';
 
 final class FetchPostByIdFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<Post>, int> {

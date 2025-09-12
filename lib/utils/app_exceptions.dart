@@ -10,7 +10,7 @@ class NotFoundError implements Exception {
 
 class NetworkError implements Exception {
   final String message;
-  NetworkError(this.message);
+  NetworkError({this.message = "No internet"});
 }
 
 class UnKnownError implements Exception {

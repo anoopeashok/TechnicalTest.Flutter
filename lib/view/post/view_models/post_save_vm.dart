@@ -49,7 +49,6 @@ class PostSaveVM  extends _$PostSaveVM{
       final result = await _postRepository.unSavePost(id);
       switch(result){
         case Ok():
-          state = AsyncData(false);
           ref.read(homeViewCountProvider.notifier).decrement();
           ref.refresh(fetchOfflinePostsProvider);
           return true;

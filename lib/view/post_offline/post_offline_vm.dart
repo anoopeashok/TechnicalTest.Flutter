@@ -7,12 +7,15 @@ part '../../generated/view/post_offline/post_offline_vm.g.dart';
 
 @riverpod
 Future<List<Post>> fetchOfflinePosts(Ref ref) async{
-  final postRepository = ref.watch(postLocalRepositoryProvider);
+     ref.keepAlive();
+
+  final postRepository = ref.read(postLocalRepositoryProvider);
   final result = await postRepository.fetchPosts();
   switch(result){
     case Ok():
+    
       return result.value;
     case Error():
-      throw result.error;
+      return [];
   }
 }

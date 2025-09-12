@@ -19,7 +19,7 @@ class _PostViewState extends ConsumerState<PostView> {
     return state.when(
         data: (val) => ListView.builder(itemBuilder: (context, index) => PostItem(post: val[index],)
         , itemCount: val.length),
-        error: (err, st) => ErrorMessage(err as Exception),
+        error: (err, st) => ErrorMessage(message: err.toString()),
         loading: () => ProgressIndicatorWidget(),
       )
     ;

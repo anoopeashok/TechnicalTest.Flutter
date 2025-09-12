@@ -45,4 +45,4 @@ final class FetchPostsProvider
   }
 }
 
-String _$fetchPostsHash() => r'98850e7cb38694f88d7cc9f796b914256224f21f';
+String _$fetchPostsHash() => r'599188ed64cf3f6ba857e11688d379e0d29a7f76';

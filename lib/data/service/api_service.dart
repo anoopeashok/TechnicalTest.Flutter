@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_tech_task/utils/app_exceptions.dart';
 import 'package:flutter_tech_task/utils/result.dart';
@@ -37,7 +38,10 @@ class ApiService {
       final json = jsonDecode(response.body);
       return Result.ok(json);
       
-    } catch (e) {
+    }on SocketException{
+      return Result.error(NetworkError());
+      }
+     catch (e) {
       return Result.error(UnKnownError());
     }
   }
