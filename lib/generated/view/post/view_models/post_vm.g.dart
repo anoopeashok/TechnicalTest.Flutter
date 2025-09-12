@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../view/post/post_vm.dart';
+part of '../../../../view/post/view_models/post_vm.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -45,4 +45,4 @@ final class FetchPostsProvider
   }
 }
 
-String _$fetchPostsHash() => r'ad41ef3326494d50d1b3a82ae45af1fdd7d7666f';
+String _$fetchPostsHash() => r'98850e7cb38694f88d7cc9f796b914256224f21f';

@@ -17,26 +17,26 @@ class PostRepositoryRemote implements PostRepository{
   PostRepositoryRemote({required ApiService apiService}): _apiService = apiService;
 
   @override
-  Future<List<Post>> fetchPosts() async{
+  Future<Result<List<Post>>> fetchPosts() async{
     final endpoint = '/posts';
     final result = await _apiService.get(endpoint: endpoint);
     switch(result){
       case Ok():
-        return List<Post>.from(result.value.map((e) => Post.fromJson(e)));
+        return Result.ok(List<Post>.from(result.value.map((e) => Post.fromJson(e))));
       case Error():
-        throw Result.error(result.error);
+        return Result.error(result.error);
     }
   }
   
   @override
-  Future<Post> fetchPostById(int id) {
+  Future<Result<Post>> fetchPostById(int id) {
     final endpoint = '/posts/$id';
     return _apiService.get(endpoint: endpoint).then((result) {
       switch (result) {
         case Ok():
-          return Post.fromJson(result.value);
+          return Result.ok( Post.fromJson(result.value));
         case Error():
-          throw Result.error(result.error);
+          return Result.error(result.error);
       }
     });
   }

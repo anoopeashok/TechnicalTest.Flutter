@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../view/post/post_detail_vm.dart';
+part of '../../../../view/post/view_models/post_detail_vm.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -58,7 +58,7 @@ final class FetchPostByIdProvider
   }
 }
 
-String _$fetchPostByIdHash() => r'8fd71fd0af03ecd15a539928086aae35b07c5130';
+String _$fetchPostByIdHash() => r'a78ecffd004ce75dbe18be3a2ff81f51691bbc2f';
 
 final class FetchPostByIdFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<Post>, int> {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_tech_task/view/post/post_detail_vm.dart';
+import 'package:flutter_tech_task/view/post/post_save.dart';
+import 'package:flutter_tech_task/view/post/view_models/post_detail_vm.dart';
 
 class PostDetailView extends ConsumerWidget {
   final int postId;
@@ -11,7 +12,17 @@ class PostDetailView extends ConsumerWidget {
 
     final state = ref.watch(fetchPostByIdProvider(postId));
     return Scaffold(
-      appBar: AppBar(title: const Text("Post Details")),
+      appBar: AppBar(title: const Text("Post Details"),
+      actions: [
+        state.when(
+          data: (post) => PostSaveButton(post: post),
+          error: (err, st) => SizedBox.shrink(),
+          loading: () => SizedBox.shrink(),
+        )
+      ],
+      ),
+      
+      
       body: state.when(
         data: (post) => Container(
                     padding: const EdgeInsets.all(15),
@@ -23,7 +34,11 @@ class PostDetailView extends ConsumerWidget {
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                       Container(height: 10),
-                      Text(post.body, style:  const TextStyle(fontSize: 16))
+                      Text(post.body, style:  const TextStyle(fontSize: 16)),
+                      SizedBox(height: 20),
+                      TextButton(onPressed: () {
+                        
+                      }, child: const Text("View Comments")
                     ])),
         error: (err, st) => ErrorWidget(err.toString()),
         loading: () => const Center(child: CircularProgressIndicator()),

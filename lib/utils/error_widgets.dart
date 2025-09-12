@@ -1,10 +1,11 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tech_task/utils/app_exceptions.dart';
 
-class ErrorWidget extends StatelessWidget {
-  String message;
-  ErrorWidget({super.key,this.message = 'An error occurred'});
+class ErrorMessage extends StatelessWidget {
+  Exception exception;
+  ErrorMessage(this.exception,{super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,10 @@ class ErrorWidget extends StatelessWidget {
         children: [
           Icon(Icons.error, color: Colors.red, size: 50),
           SizedBox(height: 10),
-          Text(message, style: TextStyle(fontSize: 18)),
+          Text(switch(exception){
+            NotFoundError()=>"Resource not found",
+            Exception() => "Something went wrong",
+          }, style: TextStyle(fontSize: 18)),
         ],
       ),
     );
