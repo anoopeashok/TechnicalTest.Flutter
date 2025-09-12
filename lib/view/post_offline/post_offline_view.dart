@@ -15,9 +15,7 @@ class PostOfflineView extends ConsumerWidget {
         itemBuilder: (context, index) => PostItem(post: posts[index]),
       ),
       error: (err, st) => ErrorMessage(err as Exception),
-      loading: () => Container(
-        
-        child: const ProgressIndicatorWidget()),
+      loading: () => Container(child: const ProgressIndicatorWidget()),
     );
   }
 }

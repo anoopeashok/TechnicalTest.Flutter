@@ -7,10 +7,12 @@ class ProgressIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  Center(
+      child: Container(
         height: 50,
         width: 50,
-        child: Center(child: CircularProgressIndicator())
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }
