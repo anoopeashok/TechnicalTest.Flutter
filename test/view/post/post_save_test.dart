@@ -6,7 +6,6 @@ import 'package:flutter_tech_task/view/post/view_models/post_save_vm.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-// where postSaveVMProvider lives
 
 class FakePost extends Mock implements Post {}
 
@@ -36,19 +35,18 @@ void main() {
       ProviderScope(
         overrides: [
           postSaveVMProvider(post.id).overrideWith(
-            () => FakePostSaveVM(true), // 👈 stub the value directly
+            () => FakePostSaveVM(true), 
           ),
         ],
-        // Override provider to return `true`
         child: MaterialApp(
           home: Scaffold(
-            body: PostSaveButton(post: post), // cast if needed
+            body: PostSaveButton(post: post), 
           ),
         ),
       ),
     );
 
-    await tester.pump(); // let FutureProvider resolve
+    await tester.pump();
 
     expect(find.byIcon(Icons.bookmark), findsOneWidget);
     expect(find.byIcon(Icons.bookmark_border), findsNothing);
@@ -77,7 +75,6 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
-          // Simulate never-completing future (loading state)
           postSaveVMProvider.overrideWith(() => FakePostSaveVM(false)),
         ],
         child: MaterialApp(
@@ -86,7 +83,6 @@ void main() {
       ),
     );
 
-    // no need to pump further → still loading
     expect(find.byType(SizedBox), findsOneWidget);
   });
 }

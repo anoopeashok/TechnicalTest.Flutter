@@ -1,9 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_tech_task/data/repository/comments/comment_remote_repo.dart';
 import 'package:flutter_tech_task/l10n/app_localizations.dart';
 import 'package:flutter_tech_task/utils/error_widgets.dart';
 import 'package:flutter_tech_task/utils/progress_indicator.dart';

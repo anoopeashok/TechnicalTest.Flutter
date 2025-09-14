@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tech_task/l10n/app_localizations.dart';
 import 'package:flutter_tech_task/utils/theme.dart';
 import 'package:flutter_tech_task/view/home/home_view.dart';
-import 'package:flutter_tech_task/view/post/post_view.dart';
 
 void main() {
   runApp(

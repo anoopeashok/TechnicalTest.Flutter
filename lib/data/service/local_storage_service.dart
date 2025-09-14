@@ -13,7 +13,7 @@ LocalStorageService localStorageService(Ref ref) => LocalStorageService();
 class LocalStorageService {
   late SharedPreferences _sharedPreferences;
 
-  Future<Result<bool>> delete(String key, String id) async {
+  Future<Result<bool>> delete(String key) async {
     _sharedPreferences = await SharedPreferences.getInstance();
     return await _sharedPreferences.remove(key)
         ? Result.ok(true)

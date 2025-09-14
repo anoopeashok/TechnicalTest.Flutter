@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_tech_task/utils/app_exceptions.dart';
 import 'package:flutter_tech_task/utils/error_widgets.dart';
 import 'package:flutter_tech_task/utils/progress_indicator.dart';
 import 'package:flutter_tech_task/view/post/post_item.dart';

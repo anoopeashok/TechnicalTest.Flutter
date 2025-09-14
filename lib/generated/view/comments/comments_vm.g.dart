@@ -67,7 +67,7 @@ final class FetchCommentsForPostProvider
 }
 
 String _$fetchCommentsForPostHash() =>
-    r'4a55cb077e071d85f9992d00ada968dedd85703a';
+    r'4c1d8a0e8ee2442bc224853611b7c253530d0d9b';
 
 final class FetchCommentsForPostFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<List<CommentModel>>, int> {

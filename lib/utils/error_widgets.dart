@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tech_task/l10n/app_localizations.dart';
-import 'package:flutter_tech_task/utils/app_exceptions.dart';
 
 class ErrorMessage extends StatelessWidget {
   String? message;
